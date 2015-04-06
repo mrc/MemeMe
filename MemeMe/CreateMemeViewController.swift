@@ -8,12 +8,13 @@
 
 import UIKit
 
-class CreateMemeViewController: UIViewController {
+class CreateMemeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-    var selectedImage: UIImage!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
+    @IBOutlet weak var cameraButton: UIBarButtonItem!
+    @IBOutlet weak var albumButton: UIBarButtonItem!
     var originalFrameOriginY: CGFloat!
 
     override func viewWillAppear(animated: Bool) {
@@ -21,12 +22,12 @@ class CreateMemeViewController: UIViewController {
         outlineParagraphStyle.alignment = .Center
 
         let outlineTextAttributes = [
-            NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40.0)!,
+            NSFontAttributeName: UIFont(name: "Impact", size: 40.0)!,
             NSParagraphStyleAttributeName: outlineParagraphStyle,
             NSStrokeColorAttributeName: UIColor.blackColor(),
             NSForegroundColorAttributeName: UIColor.whiteColor(),
-            NSStrokeWidthAttributeName: -3.0,
-            ]
+            NSStrokeWidthAttributeName: -3.0]
+
         topTextField.defaultTextAttributes = outlineTextAttributes
         bottomTextField.defaultTextAttributes = outlineTextAttributes
         originalFrameOriginY = view.frame.origin.y
@@ -38,15 +39,62 @@ class CreateMemeViewController: UIViewController {
         unsubscribeFromKeyboardNotifications()
     }
 
+    @IBOutlet weak var navigationBar: UINavigationBar!
+    @IBOutlet weak var toolBar: UIToolbar!
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageView.image = selectedImage
+        cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(.Camera)
+    }
 
-//        addPan(topTextField)
-//        addPan(bottomTextField)
-//        addPan(imageView)
-//        addPinch(imageView)
-//        addRotation(imageView)
+    @IBAction func selectFromAlbum(sender: AnyObject?) {
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.sourceType = .PhotoLibrary
+        presentViewController(picker, animated: true, completion: nil)
+    }
+
+    @IBAction func selectFromCamera(sender: AnyObject?) {
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.sourceType = .Camera
+        presentViewController(picker, animated: true, completion: nil)
+    }
+
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+        dismissViewControllerAnimated(true, completion: nil)
+
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            imageView.image = image
+        }
+    }
+
+    @IBAction func shareMeme(sender: AnyObject) {
+        let memeImage = renderMemeImage()
+        shareImages([memeImage])
+    }
+
+    func renderMemeImage() -> UIImage {
+        toolBar.hidden = true
+        navigationBar.hidden = true
+
+        UIGraphicsBeginImageContext(view.frame.size)
+        view.drawViewHierarchyInRect(view.frame, afterScreenUpdates: true)
+        let memeImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+
+        toolBar.hidden = false
+        navigationBar.hidden = false
+
+        return memeImage
+    }
+
+    func shareImages(images: [UIImage]) {
+        let avc = UIActivityViewController(activityItems: images, applicationActivities: nil)
+        presentViewController(avc, animated: true, completion: nil)
+    }
+
+    @IBAction func cancel(sender: AnyObject) {
+
     }
 
     func getKeyboardHeight(notification: NSNotification) -> CGFloat {
@@ -76,23 +124,6 @@ class CreateMemeViewController: UIViewController {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
     }
-//
-//    func addPan(view: UIView) {
-//        let pan = UIPanGestureRecognizer(target: self, action: "thingDragged:")
-//        pan.minimumNumberOfTouches = 2
-//        pan.maximumNumberOfTouches = 2
-//        view.addGestureRecognizer(pan)
-//    }
-//
-//    func addPinch(view: UIView) {
-//        let pinch = UIPinchGestureRecognizer(target: self, action: "thingPinched:")
-//        view.addGestureRecognizer(pinch)
-//    }
-//
-//    func addRotation(view: UIView) {
-//        let rotate = UIRotationGestureRecognizer(target: self, action: "thingRotated:")
-//        view.addGestureRecognizer(rotate)
-//    }
 
     @IBAction func translateView(recognizer: UIPanGestureRecognizer) {
         if recognizer.state == .Began || recognizer.state == .Changed {
