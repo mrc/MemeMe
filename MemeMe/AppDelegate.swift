@@ -12,10 +12,16 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var memes = [Meme]()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+
+//        let meme0 = Meme(text: "Hello", image: nil)
+//        let meme1 = Meme(text: "Goodbye", image: nil)
+//        memes.append(meme0)
+//        memes.append(meme1)
+
         return true
     }
 

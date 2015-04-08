@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreateMemeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class CreateMemeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var topTextField: UITextField!
@@ -62,7 +62,6 @@ class CreateMemeViewController: UIViewController, UIImagePickerControllerDelegat
 
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         dismissViewControllerAnimated(true, completion: nil)
-
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imageView.image = image
         }
@@ -70,6 +69,7 @@ class CreateMemeViewController: UIViewController, UIImagePickerControllerDelegat
 
     @IBAction func shareMeme(sender: AnyObject) {
         let memeImage = renderMemeImage()
+        saveMeme(memeImage)
         shareImages([memeImage])
     }
 
@@ -88,13 +88,25 @@ class CreateMemeViewController: UIViewController, UIImagePickerControllerDelegat
         return memeImage
     }
 
+    func saveMeme(memeImage: UIImage) {
+        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        let meme = Meme(topText: topTextField.text, bottomText: bottomTextField.text, image: memeImage)
+        appDelegate.memes.append(meme)
+    }
+
     func shareImages(images: [UIImage]) {
         let avc = UIActivityViewController(activityItems: images, applicationActivities: nil)
+        avc.popoverPresentationController?.sourceView = view
         presentViewController(avc, animated: true, completion: nil)
     }
 
     @IBAction func cancel(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
 
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 
     func getKeyboardHeight(notification: NSNotification) -> CGFloat {

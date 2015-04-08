@@ -14,6 +14,9 @@
 		2666E3BE1ACFE4C00057B9CD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2666E3BC1ACFE4C00057B9CD /* LaunchScreen.xib */; };
 		2666E3CA1ACFE4C00057B9CD /* MemeMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2666E3C91ACFE4C00057B9CD /* MemeMeTests.swift */; };
 		2666E4041ACFF02E0057B9CD /* MemeHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2666E4031ACFF02E0057B9CD /* MemeHistoryViewController.swift */; };
+		26AF71CC1AD53AF0008CAE8C /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF71CB1AD53AF0008CAE8C /* Meme.swift */; };
+		26AF71CE1AD54144008CAE8C /* SentMemeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF71CD1AD54144008CAE8C /* SentMemeCollectionViewCell.swift */; };
+		26AF71D01AD560D7008CAE8C /* MemeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF71CF1AD560D7008CAE8C /* MemeDetailViewController.swift */; };
 		26E0A0FF1AD27481003D44BC /* impact.otf in Resources */ = {isa = PBXBuildFile; fileRef = 26E0A0FE1AD27473003D44BC /* impact.otf */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +42,9 @@
 		2666E3C81ACFE4C00057B9CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2666E3C91ACFE4C00057B9CD /* MemeMeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeMeTests.swift; sourceTree = "<group>"; };
 		2666E4031ACFF02E0057B9CD /* MemeHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeHistoryViewController.swift; sourceTree = "<group>"; };
+		26AF71CB1AD53AF0008CAE8C /* Meme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
+		26AF71CD1AD54144008CAE8C /* SentMemeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentMemeCollectionViewCell.swift; sourceTree = "<group>"; };
+		26AF71CF1AD560D7008CAE8C /* MemeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeDetailViewController.swift; sourceTree = "<group>"; };
 		26E0A0FE1AD27473003D44BC /* impact.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = impact.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,11 +90,14 @@
 				2666E3B31ACFE4C00057B9CD /* AppDelegate.swift */,
 				2666E3B51ACFE4C00057B9CD /* CreateMemeViewController.swift */,
 				2666E3B71ACFE4C00057B9CD /* Main.storyboard */,
+				26AF71CF1AD560D7008CAE8C /* MemeDetailViewController.swift */,
+				26AF71CD1AD54144008CAE8C /* SentMemeCollectionViewCell.swift */,
 				2666E4031ACFF02E0057B9CD /* MemeHistoryViewController.swift */,
 				2666E3BA1ACFE4C00057B9CD /* Images.xcassets */,
 				2666E3BC1ACFE4C00057B9CD /* LaunchScreen.xib */,
 				26E0A0FE1AD27473003D44BC /* impact.otf */,
 				2666E3B11ACFE4C00057B9CD /* Supporting Files */,
+				26AF71CB1AD53AF0008CAE8C /* Meme.swift */,
 			);
 			path = MemeMe;
 			sourceTree = "<group>";
@@ -167,6 +176,7 @@
 				TargetAttributes = {
 					2666E3AD1ACFE4C00057B9CD = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 8URA3TGGU4;
 					};
 					2666E3C21ACFE4C00057B9CD = {
 						CreatedOnToolsVersion = 6.2;
@@ -219,7 +229,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26AF71CE1AD54144008CAE8C /* SentMemeCollectionViewCell.swift in Sources */,
 				2666E3B61ACFE4C00057B9CD /* CreateMemeViewController.swift in Sources */,
+				26AF71CC1AD53AF0008CAE8C /* Meme.swift in Sources */,
+				26AF71D01AD560D7008CAE8C /* MemeDetailViewController.swift in Sources */,
 				2666E4041ACFF02E0057B9CD /* MemeHistoryViewController.swift in Sources */,
 				2666E3B41ACFE4C00057B9CD /* AppDelegate.swift in Sources */,
 			);
@@ -347,6 +360,7 @@
 				INFOPLIST_FILE = MemeMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -357,6 +371,7 @@
 				INFOPLIST_FILE = MemeMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
