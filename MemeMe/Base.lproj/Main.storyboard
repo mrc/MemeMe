@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yNA-SW-v6w">
-                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="hrG-qB-r3p">
                                     <size key="itemSize" width="109" height="139"/>
@@ -66,10 +66,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="yNA-SW-v6w" secondAttribute="trailing" constant="-16" id="9WE-up-Gex"/>
-                            <constraint firstItem="yNA-SW-v6w" firstAttribute="top" secondItem="SUh-VY-X8o" secondAttribute="bottom" id="C6s-0C-ViD"/>
+                            <constraint firstItem="yNA-SW-v6w" firstAttribute="top" secondItem="SUh-VY-X8o" secondAttribute="bottom" constant="-64" id="C6s-0C-ViD"/>
                             <constraint firstAttribute="trailingMargin" secondItem="yNA-SW-v6w" secondAttribute="trailing" constant="-16" id="D0b-YJ-etl"/>
                             <constraint firstItem="yNA-SW-v6w" firstAttribute="leading" secondItem="ycW-wz-Fdo" secondAttribute="leadingMargin" constant="-16" id="JHu-3u-1dN"/>
-                            <constraint firstItem="yNA-SW-v6w" firstAttribute="top" secondItem="SUh-VY-X8o" secondAttribute="bottom" id="Oxt-sH-4uS"/>
+                            <constraint firstItem="yNA-SW-v6w" firstAttribute="top" secondItem="SUh-VY-X8o" secondAttribute="bottom" constant="-64" id="Oxt-sH-4uS"/>
                             <constraint firstItem="yNA-SW-v6w" firstAttribute="leading" secondItem="ycW-wz-Fdo" secondAttribute="leadingMargin" constant="-16" id="T5a-Jk-27v"/>
                             <constraint firstItem="Jbj-r3-uOV" firstAttribute="top" secondItem="yNA-SW-v6w" secondAttribute="bottom" id="VcL-6k-pf0"/>
                             <constraint firstItem="Jbj-r3-uOV" firstAttribute="top" secondItem="yNA-SW-v6w" secondAttribute="bottom" id="a1S-cf-KaO"/>
@@ -142,7 +142,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Vvh-sM-a7P">
-                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SentMemeTableCell" id="bLq-bM-XmD">
@@ -161,12 +161,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="Vvh-sM-a7P" secondAttribute="trailing" constant="-16" id="Fnj-h1-KLK"/>
-                            <constraint firstItem="Vvh-sM-a7P" firstAttribute="top" secondItem="AOi-7q-iUs" secondAttribute="bottom" id="QLv-BZ-Tig"/>
+                            <constraint firstItem="Vvh-sM-a7P" firstAttribute="top" secondItem="AOi-7q-iUs" secondAttribute="bottom" constant="-64" id="QLv-BZ-Tig"/>
                             <constraint firstItem="Jc8-LP-q6i" firstAttribute="top" secondItem="Vvh-sM-a7P" secondAttribute="bottom" id="Vfd-nA-avE"/>
                             <constraint firstItem="Vvh-sM-a7P" firstAttribute="leading" secondItem="oFi-ep-6EE" secondAttribute="leadingMargin" constant="-16" id="Y47-wi-DOA"/>
                             <constraint firstItem="Vvh-sM-a7P" firstAttribute="leading" secondItem="oFi-ep-6EE" secondAttribute="leadingMargin" constant="-16" id="fm8-nq-7pv"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Vvh-sM-a7P" secondAttribute="trailing" constant="-16" id="jGC-UG-pCO"/>
-                            <constraint firstItem="Vvh-sM-a7P" firstAttribute="top" secondItem="AOi-7q-iUs" secondAttribute="bottom" id="mL5-HW-rkb"/>
+                            <constraint firstItem="Vvh-sM-a7P" firstAttribute="top" secondItem="AOi-7q-iUs" secondAttribute="bottom" constant="-64" id="mL5-HW-rkb"/>
                             <constraint firstItem="Jc8-LP-q6i" firstAttribute="top" secondItem="Vvh-sM-a7P" secondAttribute="bottom" id="nUt-e6-NXF"/>
                         </constraints>
                     </view>
@@ -400,6 +400,6 @@
         <image name="table" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="p1u-5T-WbM"/>
+        <segue reference="mGj-5P-gbt"/>
     </inferredMetricsTieBreakers>
 </document>
