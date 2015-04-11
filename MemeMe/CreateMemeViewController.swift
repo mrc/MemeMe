@@ -89,9 +89,10 @@ class CreateMemeViewController: UIViewController, UIImagePickerControllerDelegat
     }
 
     func saveMeme(memeImage: UIImage) {
-        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
-        let meme = Meme(topText: topTextField.text, bottomText: bottomTextField.text, image: memeImage)
-        appDelegate.memes.append(meme)
+        if let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate {
+            let meme = Meme(topText: topTextField.text, bottomText: bottomTextField.text, image: memeImage)
+            appDelegate.memes.append(meme)
+        }
     }
 
     func shareImages(images: [UIImage]) {
@@ -111,9 +112,9 @@ class CreateMemeViewController: UIViewController, UIImagePickerControllerDelegat
 
     func getKeyboardHeight(notification: NSNotification) -> CGFloat {
         let userInfo = notification.userInfo
-        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as NSValue
-        let keyboardSizeRect = keyboardSize.CGRectValue()
-        return keyboardSizeRect.height
+        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as? NSValue
+        let keyboardSizeRect = keyboardSize?.CGRectValue()
+        return keyboardSizeRect?.height ?? 0
     }
 
     func keyboardWillShow(notification: NSNotification) {
