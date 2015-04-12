@@ -160,14 +160,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="Vvh-sM-a7P" secondAttribute="trailing" constant="-16" id="Fnj-h1-KLK"/>
-                            <constraint firstItem="Vvh-sM-a7P" firstAttribute="top" secondItem="AOi-7q-iUs" secondAttribute="bottom" constant="-64" id="QLv-BZ-Tig"/>
-                            <constraint firstItem="Jc8-LP-q6i" firstAttribute="top" secondItem="Vvh-sM-a7P" secondAttribute="bottom" id="Vfd-nA-avE"/>
-                            <constraint firstItem="Vvh-sM-a7P" firstAttribute="leading" secondItem="oFi-ep-6EE" secondAttribute="leadingMargin" constant="-16" id="Y47-wi-DOA"/>
-                            <constraint firstItem="Vvh-sM-a7P" firstAttribute="leading" secondItem="oFi-ep-6EE" secondAttribute="leadingMargin" constant="-16" id="fm8-nq-7pv"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Vvh-sM-a7P" secondAttribute="trailing" constant="-16" id="jGC-UG-pCO"/>
-                            <constraint firstItem="Vvh-sM-a7P" firstAttribute="top" secondItem="AOi-7q-iUs" secondAttribute="bottom" constant="-64" id="mL5-HW-rkb"/>
-                            <constraint firstItem="Jc8-LP-q6i" firstAttribute="top" secondItem="Vvh-sM-a7P" secondAttribute="bottom" id="nUt-e6-NXF"/>
+                            <constraint firstItem="Jc8-LP-q6i" firstAttribute="top" secondItem="Vvh-sM-a7P" secondAttribute="bottom" id="2Rk-x1-z14"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Vvh-sM-a7P" secondAttribute="trailing" constant="-16" id="CcW-tB-bma"/>
+                            <constraint firstItem="Vvh-sM-a7P" firstAttribute="leading" secondItem="oFi-ep-6EE" secondAttribute="leadingMargin" constant="-16" id="cd7-BV-BJ2"/>
+                            <constraint firstItem="Vvh-sM-a7P" firstAttribute="top" secondItem="oFi-ep-6EE" secondAttribute="topMargin" id="uwx-U6-oKT"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" id="pNx-BI-mzG"/>
