@@ -305,7 +305,7 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="fmP-aQ-3zo"/>
-                                    <barButtonItem title="Album" id="Tgd-1q-eBq">
+                                    <barButtonItem image="photoalbum" id="Tgd-1q-eBq">
                                         <connections>
                                             <action selector="selectFromAlbum:" destination="rxz-0i-KJT" id="3Jn-MS-JDn"/>
                                         </connections>
@@ -397,6 +397,7 @@
     </scenes>
     <resources>
         <image name="collection" width="30" height="30"/>
+        <image name="photoalbum" width="32" height="32"/>
         <image name="table" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
