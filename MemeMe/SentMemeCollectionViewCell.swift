@@ -8,6 +8,9 @@
 
 import UIKit
 
+/**
+    A cell for the sent meme collection.
+*/
 class SentMemeCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var imageView: UIImageView!

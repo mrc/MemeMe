@@ -21,6 +21,8 @@ class MemeHistoryViewController: UIViewController, UITableViewDataSource, UITabl
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
+
+        // Retrieve the current list of sent memes and reload the collections.
         memes = appDelegate?.memes
         tableView?.reloadData()
         collectionView?.reloadData()
@@ -29,6 +31,7 @@ class MemeHistoryViewController: UIViewController, UITableViewDataSource, UITabl
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
 
+        // If there are no sent memes yet, automatically present the Create Meme view.
         if memes?.isEmpty ?? false {
             if let vc = storyboard?.instantiateViewControllerWithIdentifier("CreateMemeViewController") as? CreateMemeViewController {
                 presentViewController(vc, animated: true, completion: nil)
@@ -77,6 +80,11 @@ class MemeHistoryViewController: UIViewController, UITableViewDataSource, UITabl
         }
     }
 
+    /**
+        Present a detail view for the chosen meme.
+    
+        @param meme The meme to show in the detail view.
+    */
     func showMemeDetail(meme: Meme) {
         if let vc = storyboard?.instantiateViewControllerWithIdentifier("MemeDetailViewController") as? MemeDetailViewController {
             vc.meme = meme
