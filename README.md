@@ -4,7 +4,6 @@ MemeMe
 Make custom [image macros](http://en.wikipedia.org/wiki/Image_macro)
 on your iPhone or iPad.
 
-
 Features
 --------
 
@@ -13,6 +12,14 @@ Features
 - Image and text labels can be dragged around (single finger drag)
 - Image can be scaled and rotated (pinch and twist)
 
+Screen shots
+------------
+
+### Create a meme
+![Screen shot of "create a meme" page](screenshots/create.png?raw=true)
+
+### View sent memes
+![Screen shot of "sent memes" collection](screenshots/collection.png?raw=true)
 
 Requirements
 ------------
