@@ -5,6 +5,15 @@ Make custom [image macros](http://en.wikipedia.org/wiki/Image_macro)
 on your iPhone or iPad.
 
 
+Features
+--------
+
+- Universal app
+- Supports portrait and landscape orientation
+- Image and text labels can be dragged around (single finger drag)
+- Image can be scaled and rotated (pinch and twist)
+
+
 Requirements
 ------------
 
